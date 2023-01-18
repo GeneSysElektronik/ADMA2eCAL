@@ -33,7 +33,7 @@ int main(int argc, char** argv)
   std::string dst_topic_name_net(argv[2]);
   std::string dst_topic_name_delta(argv[3]);
 
-  std::cout << "Subscribing to \"" << src_topic_name << "\" and publishing to \"" << dst_topic_name_net << "\" and \"" << dst_topic_name_net << "\"" << std::endl;
+  std::cout << "Subscribing to \"" << src_topic_name << "\" and publishing to \"" << dst_topic_name_net << "\" and \"" << dst_topic_name_delta << "\"" << std::endl;
   eCAL::Initialize();
 
   eCAL::protobuf::CSubscriber<pb::ADMA::ADMA_raw>      raw_adma_subscriber       (src_topic_name);

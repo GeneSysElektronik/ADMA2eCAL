@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MessageFormatDefinition>
+  <FormatHeader>
+    <GeneSysID>GBIN</GeneSysID>
+    <DynamicHeaderVersion>1.0.1.0</DynamicHeaderVersion>
+    <FormatID>10004000</FormatID>
+    <FormatVersion>1.0.0.0</FormatVersion>
+    <FormatName>AddOnBraking</FormatName>
+    <HeaderSize>96</HeaderSize>
+    <DataSize>72</DataSize>
+  </FormatHeader>
+  <MeasurementData>
+    <Package Name="INS_Time_UTC" PackageID="3059">
+      <Description>INS Time UTC</Description>
+      <Channel Name="INS_Time_msec" ChannelID="3196">
+        <Description>Time in Milliseconds, UTC</Description>
+        <Scale>1</Scale>
+        <Unit>ms</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>604800000</Max>
+        <ByteOffset>96</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>32</LengthBits>
+      </Channel>
+      <Channel Name="INS_Time_Week" ChannelID="3197">
+        <Description>Weeks, Start 0h 6-Jan-1980</Description>
+        <Scale>1</Scale>
+        <Unit>week</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>65536</Max>
+        <ByteOffset>100</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>16</LengthBits>
+      </Channel>
+      <Channel Name="Leap_Seconds" ChannelID="3198">
+        <Description>Leap seconds</Description>
+        <Scale>1</Scale>
+        <Unit>s</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>100</Max>
+        <ByteOffset>102</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>16</LengthBits>
+      </Channel>
+    </Package>
+    <Package Name="Braking_Status" PackageID="4000">
+      <Description>Braking Status</Description>
+      <Channel Name="Information_Flags" ChannelID="4000">
+        <Description>Braking status informations</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>4294967295</Max>
+        <ByteOffset>104</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>32</LengthBits>
+      </Channel>
+      <Channel Name="VXHWithInArmingLimits" ChannelID="4001">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>104</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="AXHWithInArmingLimits" ChannelID="4002">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>104</ByteOffset>
+        <BitOffset>1</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="VXHAboveArmingLimit" ChannelID="4003">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>104</ByteOffset>
+        <BitOffset>2</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="VXHWithInPostArmingLimits" ChannelID="4004">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>104</ByteOffset>
+        <BitOffset>3</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="AXHAboveAbortLimit" ChannelID="4005">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>104</ByteOffset>
+        <BitOffset>4</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="VXHWithInStandstillLimits" ChannelID="4006">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>104</ByteOffset>
+        <BitOffset>5</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="BrakeCounterResetActivated" ChannelID="4007">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>104</ByteOffset>
+        <BitOffset>6</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="BrakePedalActiv" ChannelID="4008">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>104</ByteOffset>
+        <BitOffset>7</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="PreArmingConditionsValid" ChannelID="4009">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>105</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="SimpleArmingConditionsValid" ChannelID="4010">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>105</ByteOffset>
+        <BitOffset>1</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="ArmingConditionsValid" ChannelID="4011">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>105</ByteOffset>
+        <BitOffset>2</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="MeasurementAborted" ChannelID="4012">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>105</ByteOffset>
+        <BitOffset>3</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="WindowedStarted" ChannelID="4013">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>105</ByteOffset>
+        <BitOffset>4</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="TriggeredStarted" ChannelID="4014">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>105</ByteOffset>
+        <BitOffset>5</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="WindowedStopped" ChannelID="4015">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>105</ByteOffset>
+        <BitOffset>6</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="Main_TriggeredStopped" ChannelID="4016">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>105</ByteOffset>
+        <BitOffset>7</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="VxhZeroCrossingDetected" ChannelID="4017">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>106</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="VelocityThreshold1" ChannelID="4018">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>106</ByteOffset>
+        <BitOffset>1</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="VelocityThreshold2" ChannelID="4019">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>106</ByteOffset>
+        <BitOffset>2</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="EstimatedQualityThreshold1" ChannelID="4020">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>106</ByteOffset>
+        <BitOffset>3</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="MFDDStarted" ChannelID="4021">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>106</ByteOffset>
+        <BitOffset>4</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="MFDDStopped" ChannelID="4022">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>106</ByteOffset>
+        <BitOffset>5</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="Interm1_WindowedStarted" ChannelID="4025">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>107</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="Interm1_TriggeredStarted" ChannelID="4026">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>107</ByteOffset>
+        <BitOffset>1</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="Interm1_WindowedStopped" ChannelID="4027">
+        <Description>
+        </Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>107</ByteOffset>
+        <BitOffset>2</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="Braking_State" ChannelID="4033">
+        <Description>State of braking (Braking active/inactive)</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>255</Max>
+        <ByteOffset>108</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>8</LengthBits>
+      </Channel>
+      <Channel Name="Abort_Reason" ChannelID="4034">
+        <Description>Reason of a braking abort.</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>255</Max>
+        <ByteOffset>109</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>8</LengthBits>
+      </Channel>
+      <Channel Name="Braking_Counter" ChannelID="4035">
+        <Description>Number of brake stops. If the abort reason of a brake stop is valid, the counter increases without outputting data.</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>255</Max>
+        <ByteOffset>110</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>8</LengthBits>
+      </Channel>
+    </Package>
+    <Package Name="Ext_Trig_Main_Braking" PackageID="4001">
+      <Description>Ext Trig Main Braking</Description>
+      <Channel Name="Ext_Trig_Main_Braking_Distance" ChannelID="4037">
+        <Description>External triggered braking distance.</Description>
+        <Scale>0.001</Scale>
+        <Unit>m</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>4000000</Max>
+        <ByteOffset>112</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>32</LengthBits>
+      </Channel>
+      <Channel Name="Ext_Trig_Main_Braking_Time" ChannelID="4038">
+        <Description>External triggered braking time.</Description>
+        <Scale>0.000001</Scale>
+        <Unit>s</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>4000</Max>
+        <ByteOffset>116</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>32</LengthBits>
+      </Channel>
+    </Package>
+    <Package Name="Vel_Trig_Main_Window" PackageID="4002">
+      <Description>Vel Trig Main Window</Description>
+      <Channel Name="Windowed_Main_Braking_Distance" ChannelID="4039">
+        <Description>Velocity triggered braking distance (Main Window)</Description>
+        <Scale>0.001</Scale>
+        <Unit>m</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>4000000</Max>
+        <ByteOffset>120</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>32</LengthBits>
+      </Channel>
+      <Channel Name="Windowed_Main_Braking_Time" ChannelID="4040">
+        <Description>Velocity triggered braking time. (Main Window)</Description>
+        <Scale>0.000001</Scale>
+        <Unit>s</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>4000</Max>
+        <ByteOffset>124</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>32</LengthBits>
+      </Channel>
+    </Package>
+    <Package Name="Braking_MFDD" PackageID="4003">
+      <Description>Braking MFDD</Description>
+      <Channel Name="MFDD_Braking_Distance" ChannelID="4041">
+        <Description>Velocity triggered braking distance. (MFDD)</Description>
+        <Scale>0.001</Scale>
+        <Unit>m</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>4000000</Max>
+        <ByteOffset>128</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>32</LengthBits>
+      </Channel>
+      <Channel Name="MFDD_Braking_Time" ChannelID="4042">
+        <Description>Velocity triggered braking time. (MFDD)</Description>
+        <Scale>0.000001</Scale>
+        <Unit>s</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>4000</Max>
+        <ByteOffset>132</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>32</LengthBits>
+      </Channel>
+    </Package>
+    <Package Name="Braking_Misc_1" PackageID="4004">
+      <Description>Braking Misc 1</Description>
+      <Channel Name="MFDD" ChannelID="4043">
+        <Description>Maximum deceleration figure a vehicle can achieve.</Description>
+        <Scale>0.0002</Scale>
+        <Unit>m/s²</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>10</Max>
+        <ByteOffset>136</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>16</LengthBits>
+      </Channel>
+      <Channel Name="Mean_Deceleration_Windowed" ChannelID="4044">
+        <Description>Mean deceleration between the main velocity limits.</Description>
+        <Scale>0.0002</Scale>
+        <Unit>m/s²</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>10</Max>
+        <ByteOffset>138</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>16</LengthBits>
+      </Channel>
+      <Channel Name="Arming_Velocity_Average" ChannelID="4045">
+        <Description>Averaged velocity over x msec before external brake trigger.</Description>
+        <Scale>0.002</Scale>
+        <Unit>m/s</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>100</Max>
+        <ByteOffset>140</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>16</LengthBits>
+      </Channel>
+      <Channel Name="VXH_at_Ext_Trigger_Start" ChannelID="4046">
+        <Description>Velocity at the external braking trigger event.</Description>
+        <Scale>0.002</Scale>
+        <Unit>m/s</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>100</Max>
+        <ByteOffset>142</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>16</LengthBits>
+      </Channel>
+    </Package>
+    <Package Name="Braking_Misc_2" PackageID="4005">
+      <Description>Braking Misc 2</Description>
+      <Channel Name="Normalized_Braking_Distance" ChannelID="4047">
+        <Description>Normalized braking distance, calculated by a concept that takes dynamics out of the equation when calculating performance trends.</Description>
+        <Scale>0.001</Scale>
+        <Unit>m</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>4000000</Max>
+        <ByteOffset>144</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>32</LengthBits>
+      </Channel>
+      <Channel Name="Estimated_Braking_Distance_Error" ChannelID="4048">
+        <Description>Expected error of the braking distance measurement.</Description>
+        <Scale>0.001</Scale>
+        <Unit>m</Unit>
+        <DataType>INT</DataType>
+        <Min>-30</Min>
+        <Max>30</Max>
+        <ByteOffset>148</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>16</LengthBits>
+      </Channel>
+      <Channel Name="VXH_at_Measurement_Stop" ChannelID="4049">
+        <Description>Velocity at measurement stop.</Description>
+        <Scale>0.002</Scale>
+        <Unit>m/s</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>100</Max>
+        <ByteOffset>150</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>16</LengthBits>
+      </Channel>
+    </Package>
+    <Package Name="Ext_Trig_Interm_Braking_" PackageID="4006">
+      <Description>Ext Trig Interm Braking </Description>
+      <Channel Name="Ext_Trig_Interm_Braking_Distance" ChannelID="4050">
+        <Description>External triggered intermediate braking distance.</Description>
+        <Scale>0.001</Scale>
+        <Unit>m</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>4000000</Max>
+        <ByteOffset>152</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>32</LengthBits>
+      </Channel>
+      <Channel Name="Ext_Trig_Interm_Braking_Time" ChannelID="4051">
+        <Description>External triggered intermediate braking time.</Description>
+        <Scale>0.000001</Scale>
+        <Unit>s</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>4000</Max>
+        <ByteOffset>156</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>32</LengthBits>
+      </Channel>
+    </Package>
+    <Package Name="Vel_Trig_Interm_Window" PackageID="4007">
+      <Description>Vel Trig Interm Window</Description>
+      <Channel Name="Windowed_Interm_Braking_Distance" ChannelID="4052">
+        <Description>Velocity triggered braking distance (Intermediate Window).</Description>
+        <Scale>0.001</Scale>
+        <Unit>m</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>4000000</Max>
+        <ByteOffset>160</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>32</LengthBits>
+      </Channel>
+      <Channel Name="Windowed_Interm_Braking_Time" ChannelID="4053">
+        <Description>Velocity triggered braking time. (Intermediate Window).</Description>
+        <Scale>0.000001</Scale>
+        <Unit>s</Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>4000</Max>
+        <ByteOffset>164</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>32</LengthBits>
+      </Channel>
+    </Package>
+  </MeasurementData>
+</MessageFormatDefinition>

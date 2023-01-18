@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package pb.ADMA;
+
+import "header.proto";
+
+message ADMA_raw
+{
+  pb.Header header = 1;
+  bytes payload = 2;
+  string GeneSysID = 3;
+  string DynamicHeaderVersion = 4;
+  uint64 FormatID = 5;
+  string FormatVersion = 6;
+  string FormatName = 7;
+  uint32 HeaderSize = 8;
+  uint32 DataSize = 9;
+}
+
+message GSFloat
+{
+  sint32 Integer = 1;
+  float Decimal = 2;
+  double Interpreted = 3;
+}
+
+message ADMA_net
+{
+  pb.Header         header            = 1;
+  {% for data in data_channels_net %}
+  {{data | protobuf_datatype}} {{ data.Name }} = {{ data.ChannelID }};
+  {%- endfor %}
+}
+
+message ADMA_delta
+{
+  pb.Header         header            = 1;
+  {% for data in data_channels_delta %}
+  {{data | protobuf_datatype}} {{ data.Name }} = {{ data.ChannelID }};
+  {%- endfor %}
+}

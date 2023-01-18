@@ -28,10 +28,12 @@ message ADMA_net
 {
   pb.Header         header            = 1;
   
+  uint64 Status_Byte_0 = 2100;
   uint64 Status_GNSS_Mode = 2000;
   bool Status_Standstill = 2001;
   bool Status_Skidding = 2002;
   bool Status_External_Vel_Out = 2004;
+  uint64 Status_Byte_1 = 2101;
   bool Status_Trig_GNSS = 2005;
   bool Status_Signal_IN3 = 2006;
   bool Status_Signal_IN2 = 2007;
@@ -40,18 +42,26 @@ message ADMA_net
   bool Status_AHRS_INS = 2010;
   bool Status_Dead_reckoning = 2011;
   bool Status_SyncLock = 2012;
+  uint64 Status_Byte_2 = 2102;
   bool Status_EVK_activ = 2013;
   bool Status_EVK_Estimates = 2014;
   bool Status_Heading_executed = 2015;
   bool Status_Config_Changed = 2016;
   uint64 Status_Tilt = 2017;
   uint64 Status_Pos = 2018;
+  uint64 Status_Byte_3 = 2103;
   uint64 Status_Count = 2019;
+  uint64 Status_Byte_4 = 2104;
   bool Status_Kalmanfilter_settled = 2020;
   bool Status_KF_Lat_stimulated = 2021;
   bool Status_KF_Long_stimulated = 2022;
   bool Status_KF_steady_state = 2023;
   uint64 Status_Speed = 2024;
+  uint64 Status_Byte_5 = 2105;
+  uint64 Status_Robot = 2027;
+  uint64 Status_Byte_6 = 2106;
+  uint64 Status_Byte_7 = 2107;
+  uint64 Error_Byte_0 = 2600;
   uint64 Error_Hardware = 2500;
   bool Error_Gyro_HW = 2501;
   bool Error_Accel_HW = 2502;
@@ -62,6 +72,7 @@ message ADMA_net
   bool Error_EEProm = 2507;
   bool Error_Xmit = 2508;
   bool Error_CMD = 2509;
+  uint64 Error_Byte_1 = 2601;
   uint64 Error_Misc2 = 2510;
   bool Error_Data_Bus = 2511;
   bool Error_CAN_Bus = 2512;
@@ -70,6 +81,7 @@ message ADMA_net
   bool Error_Temp_Warning = 2516;
   bool Error_Reduced_Accuracy = 2517;
   bool Error_Range_Max = 2518;
+  uint64 Error_Byte_2 = 2602;
   uint64 Warn_GNSS = 2520;
   bool Warn_GNSS_no_solution = 2521;
   bool Warn_GNSS_Vel_ignored = 2522;
@@ -77,6 +89,8 @@ message ADMA_net
   bool Warn_GNSS_unable_to_cfg = 2524;
   uint64 Warn_Misc1 = 2525;
   bool Warn_speed_off = 2526;
+  bool Warn_GNSS_DualAnt_ignored = 2528;
+  uint64 Error_Byte_3 = 2603;
   bool Error_HW_Sticky = 2529;
   double Acc_Body_HR_X = 3000;
   double Rate_Body_HR_X = 3001;

@@ -27,10 +27,10 @@
                       <xs:complexType>
                         <xs:sequence>
                           <xs:element name="Description" type="xs:string" />
-                          <xs:element name="Scale" type="xs:decimal" />
+                          <xs:element name="Scale" type="xs:unsignedByte" />
                           <xs:element name="Unit" type="xs:string" />
                           <xs:element name="DataType" type="xs:string" />
-                          <xs:element name="Min" type="xs:byte" />
+                          <xs:element name="Min" type="xs:int" />
                           <xs:element name="Max" type="xs:unsignedInt" />
                           <xs:element name="ByteOffset" type="xs:unsignedByte" />
                           <xs:element name="BitOffset" type="xs:unsignedByte" />

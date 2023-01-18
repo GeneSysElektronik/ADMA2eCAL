@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- GeneSys Elektronik GmbH -->
+<!-- VERSION "ETH-Message-Format: ADMA-Data; Format Version: 3.3.4; Datei Version: 30.10.0.50" -->
 <MessageFormatDefinition>
   <FormatHeader>
     <GeneSysID>GBIN</GeneSysID>
     <DynamicHeaderVersion>1.0.1.0</DynamicHeaderVersion>
     <FormatID>10003000</FormatID>
-    <FormatVersion>3.3.3.0</FormatVersion>
+    <FormatVersion>3.3.4.0</FormatVersion>
     <FormatName>ADMAnet</FormatName>
     <HeaderSize>96</HeaderSize>
     <DataSize>760</DataSize>
@@ -12,6 +14,18 @@
   <MeasurementData>
     <Package Name="Status" PackageID="2000">
       <Description>Status</Description>
+      <Channel Name="Status_Byte_0" ChannelID="2100">
+        <Description>Combination of the following 1-byte individual status bits into a 1-byte block summarised</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>255</Max>
+        <ByteOffset>96</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>8</LengthBits>
+      </Channel>
       <Channel Name="Status_GNSS_Mode" ChannelID="2000">
         <Description>8=DGNSS precise, 4=DGNSS coarse, 2=single GNSS, 1=no GNSS-Data</Description>
         <Scale>1</Scale>
@@ -59,6 +73,18 @@
         <ByteOffset>96</ByteOffset>
         <BitOffset>7</BitOffset>
         <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="Status_Byte_1" ChannelID="2101">
+        <Description>Combination of the following 1-byte individual status bits into a 1-byte block summarised</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>255</Max>
+        <ByteOffset>97</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>8</LengthBits>
       </Channel>
       <Channel Name="Status_Trig_GNSS" ChannelID="2005">
         <Description>1=GNSS receiver was sampling</Description>
@@ -156,6 +182,18 @@
         <BitOffset>7</BitOffset>
         <LengthBits>1</LengthBits>
       </Channel>
+      <Channel Name="Status_Byte_2" ChannelID="2102">
+        <Description>Combination of the following 1-byte individual status bits into a 1-byte block summarised</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>255</Max>
+        <ByteOffset>98</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>8</LengthBits>
+      </Channel>
       <Channel Name="Status_EVK_activ" ChannelID="2013">
         <Description>External-Velocity-Kalman filter active, control criteria fulfilled</Description>
         <Scale>1</Scale>
@@ -228,6 +266,18 @@
         <BitOffset>6</BitOffset>
         <LengthBits>2</LengthBits>
       </Channel>
+      <Channel Name="Status_Byte_3" ChannelID="2103">
+        <Description>Alignment Time countdown at measurement start, Data record count 0-255 continuously at measurement</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>255</Max>
+        <ByteOffset>99</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>8</LengthBits>
+      </Channel>
       <Channel Name="Status_Count" ChannelID="2019">
         <Description>Alignment Time countdown at measurement start, Data record count 0-255 continuously at measurement</Description>
         <Scale>1</Scale>
@@ -237,6 +287,18 @@
         <Min>0</Min>
         <Max>255</Max>
         <ByteOffset>99</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>8</LengthBits>
+      </Channel>
+      <Channel Name="Status_Byte_4" ChannelID="2104">
+        <Description>Combination of the following 1-byte individual status bits into a 1-byte block summarised</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>255</Max>
+        <ByteOffset>100</ByteOffset>
         <BitOffset>0</BitOffset>
         <LengthBits>8</LengthBits>
       </Channel>
@@ -300,9 +362,69 @@
         <BitOffset>4</BitOffset>
         <LengthBits>2</LengthBits>
       </Channel>
+      <Channel Name="Status_Byte_5" ChannelID="2105">
+        <Description>Combination of the following 1-byte individual status bits into a 1-byte block summarised</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>255</Max>
+        <ByteOffset>101</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>8</LengthBits>
+      </Channel>
+      <Channel Name="Status_Robot" ChannelID="2027">
+        <Description>9 = RTK Mode, 8 = DGNSS Mode, 7 = GNSS Mode, 2 = Locking: GNSS ok but no Init and no TimeSynclock; 3 = GNSS Outage, 0 = Error</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>15</Max>
+        <ByteOffset>101</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>4</LengthBits>
+      </Channel>
+      <Channel Name="Status_Byte_6" ChannelID="2106">
+        <Description>Combination of the following 1-byte individual status bits into a 1-byte block summarised</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>255</Max>
+        <ByteOffset>102</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>8</LengthBits>
+      </Channel>
+      <Channel Name="Status_Byte_7" ChannelID="2107">
+        <Description>Combination of the following 1-byte individual status bits into a 1-byte block summarised</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>255</Max>
+        <ByteOffset>103</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>8</LengthBits>
+      </Channel>
     </Package>
     <Package Name="Error_and_Warning" PackageID="2001">
       <Description>Error and Warning</Description>
+      <Channel Name="Error_Byte_0" ChannelID="2600">
+        <Description>Combination of the following 1-byte individual status bits into a 1-byte block summarised</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>255</Max>
+        <ByteOffset>104</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>8</LengthBits>
+      </Channel>
       <Channel Name="Error_Hardware" ChannelID="2500">
         <Description>HW Error of Gyro, Accelerometer, External velocity, GNSS Receiver - insufficient supply voltage.</Description>
         <Scale>1</Scale>
@@ -424,6 +546,18 @@
         <BitOffset>7</BitOffset>
         <LengthBits>1</LengthBits>
       </Channel>
+      <Channel Name="Error_Byte_1" ChannelID="2601">
+        <Description>Combination of the following 1-byte individual status bits into a 1-byte block summarised</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>255</Max>
+        <ByteOffset>105</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>8</LengthBits>
+      </Channel>
       <Channel Name="Error_Misc2" ChannelID="2510">
         <Description>Miscellaneous HW Errors. Definition see TechDoc</Description>
         <Scale>1</Scale>
@@ -520,6 +654,18 @@
         <BitOffset>6</BitOffset>
         <LengthBits>1</LengthBits>
       </Channel>
+      <Channel Name="Error_Byte_2" ChannelID="2602">
+        <Description>Combination of the following 1-byte individual status bits into a 1-byte block summarised</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>255</Max>
+        <ByteOffset>106</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>8</LengthBits>
+      </Channel>
       <Channel Name="Warn_GNSS" ChannelID="2520">
         <Description>Warnings GNSS</Description>
         <Scale>1</Scale>
@@ -603,6 +749,30 @@
         <ByteOffset>106</ByteOffset>
         <BitOffset>4</BitOffset>
         <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="Warn_GNSS_DualAnt_ignored" ChannelID="2528">
+        <Description>GNSS DualAnt seems not correct - Data ignored</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>BOOL</DataType>
+        <Min>0</Min>
+        <Max>1</Max>
+        <ByteOffset>106</ByteOffset>
+        <BitOffset>5</BitOffset>
+        <LengthBits>1</LengthBits>
+      </Channel>
+      <Channel Name="Error_Byte_3" ChannelID="2603">
+        <Description>Combination of the following 1-byte individual status bits into a 1-byte block summarised</Description>
+        <Scale>1</Scale>
+        <Unit>
+        </Unit>
+        <DataType>UINT</DataType>
+        <Min>0</Min>
+        <Max>255</Max>
+        <ByteOffset>107</ByteOffset>
+        <BitOffset>0</BitOffset>
+        <LengthBits>8</LengthBits>
       </Channel>
       <Channel Name="Error_HW_Sticky" ChannelID="2529">
         <Description>Hardware Error counter</Description>

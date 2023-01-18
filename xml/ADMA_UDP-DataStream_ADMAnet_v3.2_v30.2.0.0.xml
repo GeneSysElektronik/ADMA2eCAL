@@ -1,4 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- GeneSys Elektronik GmbH -->
+<!-- VERSION "ETH-Message-Format: ADMA-Data; Format Version: 3.2; Datei Version: 30.2.0.0" -->
 <MessageFormatDefinition>
   <FormatHeader>
     <GeneSysID>GBIN</GeneSysID>

@@ -1,4 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- GeneSys Elektronik GmbH -->
+<!-- VERSION "ETH-Message-Format: Braking-Data; Format Version: 1.0.0.0; Datei Version: 30.4.0.0" -->
 <MessageFormatDefinition>
   <FormatHeader>
     <GeneSysID>GBIN</GeneSysID>

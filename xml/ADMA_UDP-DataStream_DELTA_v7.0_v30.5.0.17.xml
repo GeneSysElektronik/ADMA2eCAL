@@ -1,4 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- GeneSys Elektronik GmbH -->
+<!-- VERSION "ETH-Message-Format: DELTA-Data; Format Version: 7.0; Datei Version: 30.5.0.17" -->
 <MessageFormatDefinition>
   <FormatHeader>
     <GeneSysID>GBIN</GeneSysID>
@@ -302,4 +304,4 @@
       </Channel>
     </Package>
   </MeasurementData>
-</MessageFormatDefinition>n>
+</MessageFormatDefinition>

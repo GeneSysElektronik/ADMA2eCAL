@@ -5,10 +5,12 @@ void fill_adma_proto_object(const std::vector<char>& input, pb::ADMA::ADMA_net& 
 {
   // double get_value(const std::vector<char>& input, int byte_offset, int bit_offset, int length_bits, float scale, float offset, int data_type, double min, double max);
   
+  adma.set_status_byte_0(get_value<uint64_t>(input, 96, 0, 8, 1.0, 0, false, 0.0, 255.0));
   adma.set_status_gnss_mode(get_value<uint64_t>(input, 96, 0, 4, 1.0, 0, false, 0.0, 15.0));
   adma.set_status_standstill(get_value<bool>(input, 96, 4, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_status_skidding(get_value<bool>(input, 96, 5, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_status_external_vel_out(get_value<bool>(input, 96, 7, 1, 1.0, 0, false, 0.0, 1.0));
+  adma.set_status_byte_1(get_value<uint64_t>(input, 97, 0, 8, 1.0, 0, false, 0.0, 255.0));
   adma.set_status_trig_gnss(get_value<bool>(input, 97, 0, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_status_signal_in3(get_value<bool>(input, 97, 1, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_status_signal_in2(get_value<bool>(input, 97, 2, 1, 1.0, 0, false, 0.0, 1.0));
@@ -17,18 +19,26 @@ void fill_adma_proto_object(const std::vector<char>& input, pb::ADMA::ADMA_net& 
   adma.set_status_ahrs_ins(get_value<bool>(input, 97, 5, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_status_dead_reckoning(get_value<bool>(input, 97, 6, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_status_synclock(get_value<bool>(input, 97, 7, 1, 1.0, 0, false, 0.0, 1.0));
+  adma.set_status_byte_2(get_value<uint64_t>(input, 98, 0, 8, 1.0, 0, false, 0.0, 255.0));
   adma.set_status_evk_activ(get_value<bool>(input, 98, 0, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_status_evk_estimates(get_value<bool>(input, 98, 1, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_status_heading_executed(get_value<bool>(input, 98, 2, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_status_config_changed(get_value<bool>(input, 98, 3, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_status_tilt(get_value<uint64_t>(input, 98, 4, 2, 1.0, 0, false, 0.0, 3.0));
   adma.set_status_pos(get_value<uint64_t>(input, 98, 6, 2, 1.0, 0, false, 0.0, 3.0));
+  adma.set_status_byte_3(get_value<uint64_t>(input, 99, 0, 8, 1.0, 0, false, 0.0, 255.0));
   adma.set_status_count(get_value<uint64_t>(input, 99, 0, 8, 1.0, 0, false, 0.0, 255.0));
+  adma.set_status_byte_4(get_value<uint64_t>(input, 100, 0, 8, 1.0, 0, false, 0.0, 255.0));
   adma.set_status_kalmanfilter_settled(get_value<bool>(input, 100, 0, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_status_kf_lat_stimulated(get_value<bool>(input, 100, 1, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_status_kf_long_stimulated(get_value<bool>(input, 100, 2, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_status_kf_steady_state(get_value<bool>(input, 100, 3, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_status_speed(get_value<uint64_t>(input, 100, 4, 2, 1.0, 0, false, 0.0, 3.0));
+  adma.set_status_byte_5(get_value<uint64_t>(input, 101, 0, 8, 1.0, 0, false, 0.0, 255.0));
+  adma.set_status_robot(get_value<uint64_t>(input, 101, 0, 4, 1.0, 0, false, 0.0, 15.0));
+  adma.set_status_byte_6(get_value<uint64_t>(input, 102, 0, 8, 1.0, 0, false, 0.0, 255.0));
+  adma.set_status_byte_7(get_value<uint64_t>(input, 103, 0, 8, 1.0, 0, false, 0.0, 255.0));
+  adma.set_error_byte_0(get_value<uint64_t>(input, 104, 0, 8, 1.0, 0, false, 0.0, 255.0));
   adma.set_error_hardware(get_value<uint64_t>(input, 104, 0, 4, 1.0, 0, false, 0.0, 15.0));
   adma.set_error_gyro_hw(get_value<bool>(input, 104, 0, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_error_accel_hw(get_value<bool>(input, 104, 1, 1, 1.0, 0, false, 0.0, 1.0));
@@ -39,6 +49,7 @@ void fill_adma_proto_object(const std::vector<char>& input, pb::ADMA::ADMA_net& 
   adma.set_error_eeprom(get_value<bool>(input, 104, 5, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_error_xmit(get_value<bool>(input, 104, 6, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_error_cmd(get_value<bool>(input, 104, 7, 1, 1.0, 0, false, 0.0, 1.0));
+  adma.set_error_byte_1(get_value<uint64_t>(input, 105, 0, 8, 1.0, 0, false, 0.0, 255.0));
   adma.set_error_misc2(get_value<uint64_t>(input, 105, 0, 4, 1.0, 0, false, 0.0, 15.0));
   adma.set_error_data_bus(get_value<bool>(input, 105, 0, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_error_can_bus(get_value<bool>(input, 105, 1, 1, 1.0, 0, false, 0.0, 1.0));
@@ -47,6 +58,7 @@ void fill_adma_proto_object(const std::vector<char>& input, pb::ADMA::ADMA_net& 
   adma.set_error_temp_warning(get_value<bool>(input, 105, 4, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_error_reduced_accuracy(get_value<bool>(input, 105, 5, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_error_range_max(get_value<bool>(input, 105, 6, 1, 1.0, 0, false, 0.0, 1.0));
+  adma.set_error_byte_2(get_value<uint64_t>(input, 106, 0, 8, 1.0, 0, false, 0.0, 255.0));
   adma.set_warn_gnss(get_value<uint64_t>(input, 106, 0, 4, 1.0, 0, false, 0.0, 15.0));
   adma.set_warn_gnss_no_solution(get_value<bool>(input, 106, 0, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_warn_gnss_vel_ignored(get_value<bool>(input, 106, 1, 1, 1.0, 0, false, 0.0, 1.0));
@@ -54,6 +66,8 @@ void fill_adma_proto_object(const std::vector<char>& input, pb::ADMA::ADMA_net& 
   adma.set_warn_gnss_unable_to_cfg(get_value<bool>(input, 106, 3, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_warn_misc1(get_value<uint64_t>(input, 106, 4, 4, 1.0, 0, false, 0.0, 15.0));
   adma.set_warn_speed_off(get_value<bool>(input, 106, 4, 1, 1.0, 0, false, 0.0, 1.0));
+  adma.set_warn_gnss_dualant_ignored(get_value<bool>(input, 106, 5, 1, 1.0, 0, false, 0.0, 1.0));
+  adma.set_error_byte_3(get_value<uint64_t>(input, 107, 0, 8, 1.0, 0, false, 0.0, 255.0));
   adma.set_error_hw_sticky(get_value<bool>(input, 107, 0, 1, 1.0, 0, false, 0.0, 1.0));
   adma.set_acc_body_hr_x(get_value<double>(input, 112, 0, 32, 0.0001, 0, true, -10.0, 10.0));
   adma.set_rate_body_hr_x(get_value<double>(input, 116, 0, 32, 0.0001, 0, true, -320.0, 320.0));
